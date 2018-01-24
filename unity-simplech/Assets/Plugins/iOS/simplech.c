@@ -142,6 +142,14 @@ MONExternC int ** EXPORT_API fillArray(int size) {
     return array;
 }
 
+MONExternC int EXPORT_API sumArray(int b[8]) {
+    int sum = 0;
+    for (int i = 0; i < 8; i++) {
+        sum = b[i]+sum;
+    }
+    return sum;
+}
+
 /*----------> part I: interface to CheckerBoard: CheckerBoard requires that
  at getmove and enginename are present in the dll. the
  functions help, options and about are optional. if you
@@ -150,8 +158,8 @@ MONExternC int ** EXPORT_API fillArray(int size) {
 
 
 /* required functions */
-int getmove(int b[8][8],int color, double maxtime, char str[255], int *playnow, int info, int unused, struct CBmove *move);
-void movetonotation(struct move2 move,char str[80]);
+//int getmove(int b[8][8],int color, double maxtime, char str[255], int *playnow, int info, int unused, struct CBmove *move);
+//void movetonotation(struct move2 move,char str[80]);
 
 
 /*----------> part II: search */
@@ -281,8 +289,12 @@ MONExternC int EXPORT_API enginecommand(char str[256], char reply[256])
 
 
 
-MONExternC int EXPORT_API getmove(int b[8][8],int color, double maxtime, char str[255], int *playnow, int info, int unused, struct CBmove *move)
+//MONExternC int EXPORT_API getmove(int b[8][8],int color, double maxtime, char str[255], int *playnow, int info, int unused, struct CBmove *move)
+MONExternC int EXPORT_API getmove(int b[33],int color, double maxtime)
 {
+    int playnowvalue = 0;
+    int* playnow = &playnowvalue;
+    char str[256] = {0};
     /* getmove is what checkerboard calls. you get 6 parameters:
      b[8][8]     is the current position. the values in the array are determined by
      the #defined values of BLACK, WHITE, KING, MAN. a black king for
@@ -303,7 +315,6 @@ MONExternC int EXPORT_API getmove(int b[8][8],int color, double maxtime, char st
      versions of checkers to return a move to CB. for engines playing
      english checkers this is not necessary.
      */
-    
     int i;
     int value;
     int board[46];
@@ -323,32 +334,42 @@ MONExternC int EXPORT_API getmove(int b[8][8],int color, double maxtime, char st
      10  11  12  13
      5   6   7   8
      (black)   */
-    board[5]=b[0][0];board[6]=b[2][0];board[7]=b[4][0];board[8]=b[6][0];
-    board[10]=b[1][1];board[11]=b[3][1];board[12]=b[5][1];board[13]=b[7][1];
-    board[14]=b[0][2];board[15]=b[2][2];board[16]=b[4][2];board[17]=b[6][2];
-    board[19]=b[1][3];board[20]=b[3][3];board[21]=b[5][3];board[22]=b[7][3];
-    board[23]=b[0][4];board[24]=b[2][4];board[25]=b[4][4];board[26]=b[6][4];
-    board[28]=b[1][5];board[29]=b[3][5];board[30]=b[5][5];board[31]=b[7][5];
-    board[32]=b[0][6];board[33]=b[2][6];board[34]=b[4][6];board[35]=b[6][6];
-    board[37]=b[1][7];board[38]=b[3][7];board[39]=b[5][7];board[40]=b[7][7];
-    for(i=5;i<=40;i++)
-        if(board[i]==0) board[i]=FREE;
-    for(i=9;i<=36;i+=9)
+    board[5]=b[4];board[6]=b[3];board[7]=b[2];board[8]=b[1];
+    board[10]=b[8];board[11]=b[7];board[12]=b[6];board[13]=b[5];
+    board[14]=b[12];board[15]=b[11];board[16]=b[10];board[17]=b[9];
+    board[19]=b[16];board[20]=b[15];board[21]=b[14];board[22]=b[13];
+    board[23]=b[20];board[24]=b[19];board[25]=b[18];board[26]=b[17];
+    board[28]=b[24];board[29]=b[23];board[30]=b[22];board[31]=b[21];
+    board[32]=b[28];board[33]=b[27];board[34]=b[26];board[35]=b[25];
+    board[37]=b[32];board[38]=b[31];board[39]=b[30];board[40]=b[29];
+    for(i=5;i<=40;i++) {
+        if(board[i]==0) {
+            board[i]=FREE;
+        }
+    }
+    for(i=9;i<=36;i+=9) {
         board[i]=OCCUPIED;
+    }
     play=playnow;
     
     value=checkers(board,color,maxtime,str);
-    for(i=5;i<=40;i++)
-        if(board[i]==FREE) board[i]=0;
+    
+    // not needed if you are ok with FREE beaten cells
+//    for(i=5;i<=40;i++) {
+//        if(board[i]==FREE) {
+//            board[i]=0;
+//        }
+//    }
+    
     /* return the board */
-    b[0][0]=board[5];b[2][0]=board[6];b[4][0]=board[7];b[6][0]=board[8];
-    b[1][1]=board[10];b[3][1]=board[11];b[5][1]=board[12];b[7][1]=board[13];
-    b[0][2]=board[14];b[2][2]=board[15];b[4][2]=board[16];b[6][2]=board[17];
-    b[1][3]=board[19];b[3][3]=board[20];b[5][3]=board[21];b[7][3]=board[22];
-    b[0][4]=board[23];b[2][4]=board[24];b[4][4]=board[25];b[6][4]=board[26];
-    b[1][5]=board[28];b[3][5]=board[29];b[5][5]=board[30];b[7][5]=board[31];
-    b[0][6]=board[32];b[2][6]=board[33];b[4][6]=board[34];b[6][6]=board[35];
-    b[1][7]=board[37];b[3][7]=board[38];b[5][7]=board[39];b[7][7]=board[40];
+    b[4]=board[5];b[3]=board[6];b[2]=board[7];b[1]=board[8];
+    b[8]=board[10];b[7]=board[11];b[6]=board[12];b[5]=board[13];
+    b[12]=board[14];b[11]=board[15];b[10]=board[16];b[9]=board[17];
+    b[16]=board[19];b[15]=board[20];b[14]=board[21];b[13]=board[22];
+    b[20]=board[23];b[19]=board[24];b[18]=board[25];b[17]=board[26];
+    b[24]=board[28];b[23]=board[29];b[22]=board[30];b[21]=board[31];
+    b[28]=board[32];b[27]=board[33];b[26]=board[34];b[25]=board[35];
+    b[32]=board[37];b[31]=board[38];b[30]=board[39];b[29]=board[40];
     if(color==BLACK)
     {
         if(value>4000) return WIN;
@@ -409,7 +430,6 @@ int  checkers(int b[46],int color, double maxtime, char *str)
     generatecapturelists=0;
     evaluations=0;
 #endif
-    
     /*--------> check if there is only one move */
     numberofmoves=generatecapturelist(b,movelist,color);
     if(numberofmoves==1) {domove(b,movelist[0]);sprintf(str,"forced capture");return(1);}
@@ -420,7 +440,9 @@ int  checkers(int b[46],int color, double maxtime, char *str)
         if(numberofmoves==0) {sprintf(str,"no legal moves in this position");return(0);}
     }
     start=clock();
+    
     eval=firstalphabeta(b,1,-10000,10000,color,&best);
+    
     for(i=2;(i<=MAXDEPTH) && ( (clock()-start)/CLOCKS_PER_SEC < maxtime );i++)
     {
         lastbest=best;
@@ -440,6 +462,7 @@ int  checkers(int b[46],int color, double maxtime, char *str)
         if(eval==-5000) break;
     }
     i--;
+    
     if(*play)
         movetonotation(lastbest,str2);
     else
@@ -469,6 +492,7 @@ int firstalphabeta(int b[46], int depth, int alpha, int beta, int color, struct 
     alphabetas++;
 #endif
     if (*play) return 0;
+    
     /*----------> test if captures are possible */
     capture=testcapture(b,color);
     
@@ -1713,7 +1737,6 @@ int  testcapture(int b[46], int color)
 #ifdef STATISTICS
     testcaptures++;
 #endif
-    
     if(color == BLACK)
     {
         for(i=5;i<=40;i++)

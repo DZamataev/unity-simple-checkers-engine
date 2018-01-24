@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		92C8733220120D3F003AC2A5 /* simplech.c in Sources */ = {isa = PBXBuildFile; fileRef = 92C8733020120D3F003AC2A5 /* simplech.c */; };
+		92E5815F2018B8700029AE7B /* simplech_test.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E5815E2018B8700029AE7B /* simplech_test.m */; };
+		92E581642018B8AB0029AE7B /* simplech.c in Sources */ = {isa = PBXBuildFile; fileRef = 92C8733020120D3F003AC2A5 /* simplech.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -15,10 +17,20 @@
 		92C87328201209EC003AC2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C8733020120D3F003AC2A5 /* simplech.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = simplech.c; sourceTree = "<group>"; };
 		92C8733120120D3F003AC2A5 /* simplech.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simplech.h; sourceTree = "<group>"; };
+		92E5815C2018B8700029AE7B /* simplech-test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "simplech-test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92E5815E2018B8700029AE7B /* simplech_test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = simplech_test.m; sourceTree = "<group>"; };
+		92E581602018B8700029AE7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		92C87322201209EC003AC2A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92E581592018B8700029AE7B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -32,6 +44,7 @@
 			isa = PBXGroup;
 			children = (
 				92C87327201209EC003AC2A5 /* simplech */,
+				92E5815D2018B8700029AE7B /* simplech-test */,
 				92C87326201209EC003AC2A5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				92C87325201209EC003AC2A5 /* simplech.bundle */,
+				92E5815C2018B8700029AE7B /* simplech-test.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,6 +66,15 @@
 				92C8733020120D3F003AC2A5 /* simplech.c */,
 			);
 			path = simplech;
+			sourceTree = "<group>";
+		};
+		92E5815D2018B8700029AE7B /* simplech-test */ = {
+			isa = PBXGroup;
+			children = (
+				92E5815E2018B8700029AE7B /* simplech_test.m */,
+				92E581602018B8700029AE7B /* Info.plist */,
+			);
+			path = "simplech-test";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +97,23 @@
 			productReference = 92C87325201209EC003AC2A5 /* simplech.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
+		92E5815B2018B8700029AE7B /* simplech-test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92E581612018B8700029AE7B /* Build configuration list for PBXNativeTarget "simplech-test" */;
+			buildPhases = (
+				92E581582018B8700029AE7B /* Sources */,
+				92E581592018B8700029AE7B /* Frameworks */,
+				92E5815A2018B8700029AE7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "simplech-test";
+			productName = "simplech-test";
+			productReference = 92E5815C2018B8700029AE7B /* simplech-test.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -85,6 +125,10 @@
 				TargetAttributes = {
 					92C87324201209EC003AC2A5 = {
 						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					92E5815B2018B8700029AE7B = {
+						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -102,12 +146,20 @@
 			projectRoot = "";
 			targets = (
 				92C87324201209EC003AC2A5 /* simplech */,
+				92E5815B2018B8700029AE7B /* simplech-test */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		92C87323201209EC003AC2A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92E5815A2018B8700029AE7B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,6 +174,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				92C8733220120D3F003AC2A5 /* simplech.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92E581582018B8700029AE7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92E581642018B8AB0029AE7B /* simplech.c in Sources */,
+				92E5815F2018B8700029AE7B /* simplech_test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +324,32 @@
 			};
 			name = Release;
 		};
+		92E581622018B8700029AE7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 43663733CZ;
+				INFOPLIST_FILE = "simplech-test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.org.simplech-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		92E581632018B8700029AE7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 43663733CZ;
+				INFOPLIST_FILE = "simplech-test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.org.simplech-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -280,6 +367,15 @@
 			buildConfigurations = (
 				92C8732C201209EC003AC2A5 /* Debug */,
 				92C8732D201209EC003AC2A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92E581612018B8700029AE7B /* Build configuration list for PBXNativeTarget "simplech-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92E581622018B8700029AE7B /* Debug */,
+				92E581632018B8700029AE7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
