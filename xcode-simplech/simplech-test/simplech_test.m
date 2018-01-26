@@ -18,7 +18,11 @@
 #define MAXDEPTH 99
 #define MAXMOVES 28
 
-
+/* return values */
+#define DRAW 0
+#define WIN 1
+#define LOSS 2
+#define UNKNOWN 3
 
 
 @interface simplech_test : XCTestCase
@@ -214,6 +218,40 @@
     XCTAssertTrue(board[22] == (BLACK|MAN)); //so sad that AI does not take win
     
     NSLog(@"testPlayOne getmove resulted in: %i", result);
+}
+
+- (void)testMatch {
+    int board[33];
+    
+    for (int i = 0; i < 33; i++) {
+        if (i > 0 && i < 13) {
+            board[i] = BLACK|MAN;
+        }
+        else if (i > 20 && i < 33) {
+            board[i] = WHITE|MAN;
+        }
+        else {
+            board[i] = FREE;
+        }
+    }
+    
+    int side = WHITE;
+    int turn = 0;
+    int result = -1;
+    while (result != WHITE || result != BLACK) {
+        turn++;
+        result = getmove (board, side, 1.0);
+        NSLog(@"Turn #%i", turn);
+        [self logBoard:board];
+        if (side == WHITE) {
+            side = BLACK;
+        }
+        else {
+            side = WHITE;
+        }
+    }
+    
+    NSLog(@"testPlayOne getmove resulted in: %i, total turns: %i", result, turn);
 }
 
 @end
