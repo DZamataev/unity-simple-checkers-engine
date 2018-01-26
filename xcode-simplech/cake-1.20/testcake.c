@@ -201,7 +201,7 @@ int m[80]={12924307,
 
 FILE *cake_fp0;
 FILE *fp2;
-main()
+testcake_main()
 {
    int board[8][8];
    int i;

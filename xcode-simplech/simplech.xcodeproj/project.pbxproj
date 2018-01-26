@@ -7,47 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		924FC554201B597600B4666A /* interface.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC540201B597400B4666A /* interface.c */; };
-		924FC555201B597600B4666A /* book.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC541201B597400B4666A /* book.c */; };
-		924FC556201B597600B4666A /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 924FC543201B597400B4666A /* COPYING */; };
-		924FC557201B597600B4666A /* db4 in Resources */ = {isa = PBXBuildFile; fileRef = 924FC545201B597400B4666A /* db4 */; };
-		924FC558201B597600B4666A /* db4.idx in Resources */ = {isa = PBXBuildFile; fileRef = 924FC546201B597400B4666A /* db4.idx */; };
-		924FC559201B597600B4666A /* cakepp.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC547201B597400B4666A /* cakepp.c */; };
-		924FC55A201B597600B4666A /* ansicake.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC54A201B597400B4666A /* ansicake.c */; };
-		924FC55B201B597600B4666A /* db.ini in Resources */ = {isa = PBXBuildFile; fileRef = 924FC54C201B597500B4666A /* db.ini */; };
-		924FC55C201B597600B4666A /* db.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC54D201B597500B4666A /* db.c */; };
-		924FC55D201B597600B4666A /* README in Resources */ = {isa = PBXBuildFile; fileRef = 924FC54E201B597500B4666A /* README */; };
-		924FC55E201B597600B4666A /* movegen.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC54F201B597500B4666A /* movegen.c */; };
-		924FC55F201B597600B4666A /* testcake.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC552201B597500B4666A /* testcake.c */; };
-		924FC560201B597600B4666A /* xbook.bin in Resources */ = {isa = PBXBuildFile; fileRef = 924FC553201B597500B4666A /* xbook.bin */; };
+		924FC580201B68DE00B4666A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 924FC57F201B68DE00B4666A /* main.m */; };
+		924FC5B7201B695700B4666A /* movegen.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC5A2201B695600B4666A /* movegen.c */; };
+		924FC5B8201B695700B4666A /* interface.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC5A4201B695600B4666A /* interface.c */; };
+		924FC5B9201B695700B4666A /* testcake.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC5A5201B695600B4666A /* testcake.c */; };
+		924FC5BA201B695700B4666A /* cakepp.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC5A6201B695600B4666A /* cakepp.c */; };
+		924FC5BB201B695700B4666A /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 924FC5A8201B695600B4666A /* Makefile */; };
+		924FC5BD201B695700B4666A /* book.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC5AE201B695600B4666A /* book.c */; };
+		924FC5BE201B695700B4666A /* db.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC5B5201B695600B4666A /* db.c */; };
+		924FC5C0201B6B4E00B4666A /* xbook.bin in Resources */ = {isa = PBXBuildFile; fileRef = 924FC5A9201B695600B4666A /* xbook.bin */; };
+		924FC5C1201B6B4E00B4666A /* db.ini in Resources */ = {isa = PBXBuildFile; fileRef = 924FC5AB201B695600B4666A /* db.ini */; };
+		924FC5C2201B6B4E00B4666A /* db4.idx in Resources */ = {isa = PBXBuildFile; fileRef = 924FC5AC201B695600B4666A /* db4.idx */; };
+		924FC5C3201B6B4E00B4666A /* db4 in Resources */ = {isa = PBXBuildFile; fileRef = 924FC5B4201B695600B4666A /* db4 */; };
+		924FC5C4201B6C2B00B4666A /* db.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 924FC5AB201B695600B4666A /* db.ini */; };
+		924FC5C5201B6C2B00B4666A /* db4.idx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 924FC5AC201B695600B4666A /* db4.idx */; };
+		924FC5C6201B6C2B00B4666A /* db4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 924FC5B4201B695600B4666A /* db4 */; };
+		924FC5C7201B6C3100B4666A /* xbook.bin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 924FC5A9201B695600B4666A /* xbook.bin */; };
 		92C8733220120D3F003AC2A5 /* simplech.c in Sources */ = {isa = PBXBuildFile; fileRef = 92C8733020120D3F003AC2A5 /* simplech.c */; };
 		92E5815F2018B8700029AE7B /* simplech_test.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E5815E2018B8700029AE7B /* simplech_test.m */; };
 		92E581642018B8AB0029AE7B /* simplech.c in Sources */ = {isa = PBXBuildFile; fileRef = 92C8733020120D3F003AC2A5 /* simplech.c */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		924FC57B201B68DE00B4666A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				924FC5C7201B6C3100B4666A /* xbook.bin in CopyFiles */,
+				924FC5C4201B6C2B00B4666A /* db.ini in CopyFiles */,
+				924FC5C5201B6C2B00B4666A /* db4.idx in CopyFiles */,
+				924FC5C6201B6C2B00B4666A /* db4 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		924FC539201B58FC00B4666A /* cake.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cake.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		924FC53B201B58FC00B4666A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		924FC540201B597400B4666A /* interface.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = interface.c; path = "cake-1.20/interface.c"; sourceTree = "<group>"; };
-		924FC541201B597400B4666A /* book.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = book.c; path = "cake-1.20/book.c"; sourceTree = "<group>"; };
-		924FC542201B597400B4666A /* book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = book.h; path = "cake-1.20/book.h"; sourceTree = "<group>"; };
-		924FC543201B597400B4666A /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = COPYING; path = "cake-1.20/COPYING"; sourceTree = "<group>"; };
-		924FC544201B597400B4666A /* cakepp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cakepp.h; path = "cake-1.20/cakepp.h"; sourceTree = "<group>"; };
-		924FC545201B597400B4666A /* db4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = db4; path = "cake-1.20/db4"; sourceTree = "<group>"; };
-		924FC546201B597400B4666A /* db4.idx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = db4.idx; path = "cake-1.20/db4.idx"; sourceTree = "<group>"; };
-		924FC547201B597400B4666A /* cakepp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cakepp.c; path = "cake-1.20/cakepp.c"; sourceTree = "<group>"; };
-		924FC548201B597400B4666A /* movegen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = movegen.h; path = "cake-1.20/movegen.h"; sourceTree = "<group>"; };
-		924FC549201B597400B4666A /* db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = db.h; path = "cake-1.20/db.h"; sourceTree = "<group>"; };
-		924FC54A201B597400B4666A /* ansicake.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ansicake.c; path = "cake-1.20/ansicake.c"; sourceTree = "<group>"; };
-		924FC54B201B597400B4666A /* consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = consts.h; path = "cake-1.20/consts.h"; sourceTree = "<group>"; };
-		924FC54C201B597500B4666A /* db.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = db.ini; path = "cake-1.20/db.ini"; sourceTree = "<group>"; };
-		924FC54D201B597500B4666A /* db.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = db.c; path = "cake-1.20/db.c"; sourceTree = "<group>"; };
-		924FC54E201B597500B4666A /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = "cake-1.20/README"; sourceTree = "<group>"; };
-		924FC54F201B597500B4666A /* movegen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = movegen.c; path = "cake-1.20/movegen.c"; sourceTree = "<group>"; };
-		924FC550201B597500B4666A /* structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = structs.h; path = "cake-1.20/structs.h"; sourceTree = "<group>"; };
-		924FC551201B597500B4666A /* switches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = switches.h; path = "cake-1.20/switches.h"; sourceTree = "<group>"; };
-		924FC552201B597500B4666A /* testcake.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = testcake.c; path = "cake-1.20/testcake.c"; sourceTree = "<group>"; };
-		924FC553201B597500B4666A /* xbook.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = xbook.bin; path = "cake-1.20/xbook.bin"; sourceTree = "<group>"; };
+		924FC57D201B68DE00B4666A /* cake-test-tool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "cake-test-tool"; sourceTree = BUILT_PRODUCTS_DIR; };
+		924FC57F201B68DE00B4666A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		924FC5A2201B695600B4666A /* movegen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movegen.c; sourceTree = "<group>"; };
+		924FC5A3201B695600B4666A /* book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = book.h; sourceTree = "<group>"; };
+		924FC5A4201B695600B4666A /* interface.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = interface.c; sourceTree = "<group>"; };
+		924FC5A5201B695600B4666A /* testcake.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = testcake.c; sourceTree = "<group>"; };
+		924FC5A6201B695600B4666A /* cakepp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cakepp.c; sourceTree = "<group>"; };
+		924FC5A7201B695600B4666A /* db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = db.h; sourceTree = "<group>"; };
+		924FC5A8201B695600B4666A /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		924FC5A9201B695600B4666A /* xbook.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = xbook.bin; sourceTree = "<group>"; };
+		924FC5AA201B695600B4666A /* ansicake.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ansicake.c; sourceTree = "<group>"; };
+		924FC5AB201B695600B4666A /* db.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db.ini; sourceTree = "<group>"; };
+		924FC5AC201B695600B4666A /* db4.idx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db4.idx; sourceTree = "<group>"; };
+		924FC5AD201B695600B4666A /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		924FC5AE201B695600B4666A /* book.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = book.c; sourceTree = "<group>"; };
+		924FC5AF201B695600B4666A /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		924FC5B0201B695600B4666A /* movegen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = movegen.h; sourceTree = "<group>"; };
+		924FC5B1201B695600B4666A /* cakepp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cakepp.h; sourceTree = "<group>"; };
+		924FC5B2201B695600B4666A /* consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = consts.h; sourceTree = "<group>"; };
+		924FC5B3201B695600B4666A /* structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = structs.h; sourceTree = "<group>"; };
+		924FC5B4201B695600B4666A /* db4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = db4; sourceTree = "<group>"; };
+		924FC5B5201B695600B4666A /* db.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = db.c; sourceTree = "<group>"; };
+		924FC5B6201B695600B4666A /* switches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = switches.h; sourceTree = "<group>"; };
 		92C87325201209EC003AC2A5 /* simplech.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simplech.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C87328201209EC003AC2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C8733020120D3F003AC2A5 /* simplech.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = simplech.c; sourceTree = "<group>"; };
@@ -58,7 +78,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		924FC536201B58FC00B4666A /* Frameworks */ = {
+		924FC57A201B68DE00B4666A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -82,32 +102,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		924FC53A201B58FC00B4666A /* cake */ = {
+		924FC57E201B68DE00B4666A /* cake-test-tool */ = {
 			isa = PBXGroup;
 			children = (
-				924FC54A201B597400B4666A /* ansicake.c */,
-				924FC541201B597400B4666A /* book.c */,
-				924FC542201B597400B4666A /* book.h */,
-				924FC547201B597400B4666A /* cakepp.c */,
-				924FC544201B597400B4666A /* cakepp.h */,
-				924FC54B201B597400B4666A /* consts.h */,
-				924FC543201B597400B4666A /* COPYING */,
-				924FC54D201B597500B4666A /* db.c */,
-				924FC549201B597400B4666A /* db.h */,
-				924FC54C201B597500B4666A /* db.ini */,
-				924FC545201B597400B4666A /* db4 */,
-				924FC546201B597400B4666A /* db4.idx */,
-				924FC540201B597400B4666A /* interface.c */,
-				924FC54F201B597500B4666A /* movegen.c */,
-				924FC548201B597400B4666A /* movegen.h */,
-				924FC54E201B597500B4666A /* README */,
-				924FC550201B597500B4666A /* structs.h */,
-				924FC551201B597500B4666A /* switches.h */,
-				924FC552201B597500B4666A /* testcake.c */,
-				924FC553201B597500B4666A /* xbook.bin */,
-				924FC53B201B58FC00B4666A /* Info.plist */,
+				924FC57F201B68DE00B4666A /* main.m */,
 			);
-			path = cake;
+			path = "cake-test-tool";
+			sourceTree = "<group>";
+		};
+		924FC5A1201B695600B4666A /* cake-1.20 */ = {
+			isa = PBXGroup;
+			children = (
+				924FC5AA201B695600B4666A /* ansicake.c */,
+				924FC5B6201B695600B4666A /* switches.h */,
+				924FC5B2201B695600B4666A /* consts.h */,
+				924FC5B3201B695600B4666A /* structs.h */,
+				924FC5A4201B695600B4666A /* interface.c */,
+				924FC5A5201B695600B4666A /* testcake.c */,
+				924FC5B1201B695600B4666A /* cakepp.h */,
+				924FC5A6201B695600B4666A /* cakepp.c */,
+				924FC5A7201B695600B4666A /* db.h */,
+				924FC5B5201B695600B4666A /* db.c */,
+				924FC5A3201B695600B4666A /* book.h */,
+				924FC5AE201B695600B4666A /* book.c */,
+				924FC5B0201B695600B4666A /* movegen.h */,
+				924FC5A2201B695600B4666A /* movegen.c */,
+				924FC5A9201B695600B4666A /* xbook.bin */,
+				924FC5AB201B695600B4666A /* db.ini */,
+				924FC5AC201B695600B4666A /* db4.idx */,
+				924FC5B4201B695600B4666A /* db4 */,
+				924FC5A8201B695600B4666A /* Makefile */,
+				924FC5AF201B695600B4666A /* COPYING */,
+				924FC5AD201B695600B4666A /* README */,
+			);
+			path = "cake-1.20";
 			sourceTree = "<group>";
 		};
 		92C8731C201209EC003AC2A5 = {
@@ -115,7 +143,8 @@
 			children = (
 				92C87327201209EC003AC2A5 /* simplech */,
 				92E5815D2018B8700029AE7B /* simplech-test */,
-				924FC53A201B58FC00B4666A /* cake */,
+				924FC5A1201B695600B4666A /* cake-1.20 */,
+				924FC57E201B68DE00B4666A /* cake-test-tool */,
 				92C87326201209EC003AC2A5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,7 +154,7 @@
 			children = (
 				92C87325201209EC003AC2A5 /* simplech.bundle */,
 				92E5815C2018B8700029AE7B /* simplech-test.xctest */,
-				924FC539201B58FC00B4666A /* cake.bundle */,
+				924FC57D201B68DE00B4666A /* cake-test-tool */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,22 +181,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		924FC538201B58FC00B4666A /* cake */ = {
+		924FC57C201B68DE00B4666A /* cake-test-tool */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 924FC53E201B58FC00B4666A /* Build configuration list for PBXNativeTarget "cake" */;
+			buildConfigurationList = 924FC581201B68DE00B4666A /* Build configuration list for PBXNativeTarget "cake-test-tool" */;
 			buildPhases = (
-				924FC535201B58FC00B4666A /* Sources */,
-				924FC536201B58FC00B4666A /* Frameworks */,
-				924FC537201B58FC00B4666A /* Resources */,
+				924FC579201B68DE00B4666A /* Sources */,
+				924FC57A201B68DE00B4666A /* Frameworks */,
+				924FC57B201B68DE00B4666A /* CopyFiles */,
+				924FC5BF201B6B3900B4666A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = cake;
-			productName = cake;
-			productReference = 924FC539201B58FC00B4666A /* cake.bundle */;
-			productType = "com.apple.product-type.bundle";
+			name = "cake-test-tool";
+			productName = "cake-test-tool";
+			productReference = 924FC57D201B68DE00B4666A /* cake-test-tool */;
+			productType = "com.apple.product-type.tool";
 		};
 		92C87324201209EC003AC2A5 /* simplech */ = {
 			isa = PBXNativeTarget;
@@ -212,7 +242,7 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = org;
 				TargetAttributes = {
-					924FC538201B58FC00B4666A = {
+					924FC57C201B68DE00B4666A = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
@@ -240,22 +270,20 @@
 			targets = (
 				92C87324201209EC003AC2A5 /* simplech */,
 				92E5815B2018B8700029AE7B /* simplech-test */,
-				924FC538201B58FC00B4666A /* cake */,
+				924FC57C201B68DE00B4666A /* cake-test-tool */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		924FC537201B58FC00B4666A /* Resources */ = {
+		924FC5BF201B6B3900B4666A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924FC55D201B597600B4666A /* README in Resources */,
-				924FC558201B597600B4666A /* db4.idx in Resources */,
-				924FC556201B597600B4666A /* COPYING in Resources */,
-				924FC560201B597600B4666A /* xbook.bin in Resources */,
-				924FC55B201B597600B4666A /* db.ini in Resources */,
-				924FC557201B597600B4666A /* db4 in Resources */,
+				924FC5C0201B6B4E00B4666A /* xbook.bin in Resources */,
+				924FC5C1201B6B4E00B4666A /* db.ini in Resources */,
+				924FC5C2201B6B4E00B4666A /* db4.idx in Resources */,
+				924FC5C3201B6B4E00B4666A /* db4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,17 +304,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		924FC535201B58FC00B4666A /* Sources */ = {
+		924FC579201B68DE00B4666A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924FC555201B597600B4666A /* book.c in Sources */,
-				924FC55C201B597600B4666A /* db.c in Sources */,
-				924FC554201B597600B4666A /* interface.c in Sources */,
-				924FC55A201B597600B4666A /* ansicake.c in Sources */,
-				924FC55F201B597600B4666A /* testcake.c in Sources */,
-				924FC559201B597600B4666A /* cakepp.c in Sources */,
-				924FC55E201B597600B4666A /* movegen.c in Sources */,
+				924FC5BB201B695700B4666A /* Makefile in Sources */,
+				924FC580201B68DE00B4666A /* main.m in Sources */,
+				924FC5BD201B695700B4666A /* book.c in Sources */,
+				924FC5BE201B695700B4666A /* db.c in Sources */,
+				924FC5B8201B695700B4666A /* interface.c in Sources */,
+				924FC5B7201B695700B4666A /* movegen.c in Sources */,
+				924FC5BA201B695700B4666A /* cakepp.c in Sources */,
+				924FC5B9201B695700B4666A /* testcake.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,42 +339,27 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		924FC53C201B58FC00B4666A /* Debug */ = {
+		924FC582201B68DE00B4666A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 43663733CZ;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
-				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
-					SYS_MACOS,
-					DEBUG,
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"SYS_MACOS=1",
 				);
-				INFOPLIST_FILE = cake/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				OTHER_CFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.org.cake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
-		924FC53D201B58FC00B4666A /* Release */ = {
+		924FC583201B68DE00B4666A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 43663733CZ;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
-				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = SYS_MACOS;
-				INFOPLIST_FILE = cake/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				OTHER_CFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.org.cake;
+				GCC_PREPROCESSOR_DEFINITIONS = "SYS_MACOS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -513,11 +527,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		924FC53E201B58FC00B4666A /* Build configuration list for PBXNativeTarget "cake" */ = {
+		924FC581201B68DE00B4666A /* Build configuration list for PBXNativeTarget "cake-test-tool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				924FC53C201B58FC00B4666A /* Debug */,
-				924FC53D201B58FC00B4666A /* Release */,
+				924FC582201B68DE00B4666A /* Debug */,
+				924FC583201B68DE00B4666A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

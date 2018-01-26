@@ -16,6 +16,9 @@
 */
 #include "switches.h"
 
+#ifdef SYS_MACOS
+#include <CoreFoundation/CoreFoundation.h>
+#endif
 
 #define int32 unsigned long
 struct pos
@@ -338,8 +341,28 @@ int DBInit()
    /* find out which files to use */
    fp=fopen("db.ini","r");
 #ifdef SYS_UNIX
-   if(fp==NULL)
+    if(fp==NULL) {
      fp=fopen(DBINI,"r");
+    }
+#endif
+#ifdef SYS_MACOS
+#ifdef DBINI
+    if(fp==NULL) {
+//      fp=fopen(DBINI,"r");
+    }
+#endif
+    if(fp==NULL)
+    {
+        char resourcePath[PATH_MAX];
+        CFBundleRef mainBundle;
+        CFURLRef resourcesDirectoryURL;
+        
+        mainBundle = CFBundleGetMainBundle();
+        resourcesDirectoryURL = CFBundleCopyResourcesDirectoryURL(mainBundle);
+        CFURLGetFileSystemRepresentation(resourcesDirectoryURL, true, (UInt8 *) resourcePath, PATH_MAX);
+        CFRelease(resourcesDirectoryURL);
+        chdir(resourcePath);
+    }
 #endif
    if(fp==NULL)
    	{
@@ -480,7 +503,8 @@ if(logging&2)
 	printf("... using database %s\n",dbfilename);
 
 #ifdef SYS_MACOS
-	DBFile = open( dbfilename, O_BINARY|O_RDONLY);
+	//DBFile = open( dbfilename, O_BINARY|O_RDONLY);
+    DBFile = open( dbfilename, O_RDONLY);
 #endif
 #ifdef SYS_UNIX
 	DBFile = open( dbfilename, O_RDONLY);

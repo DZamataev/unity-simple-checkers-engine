@@ -553,6 +553,7 @@ bookmovetomove(int32 bookmove, struct move *best, struct pos *p, int color)
 		best->wk |= (best->wm & BBR);
 		best->wm &= NBBR;
 		}
+        return 0;
 	}
 
 /*-----------------------------------------------------------------------------*/
