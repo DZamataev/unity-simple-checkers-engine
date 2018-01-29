@@ -897,7 +897,8 @@ int negamax(int d, int color, int alpha, int beta, int32 *protokiller, int trunc
             	/* no captures are possible */
                dblookups++;
                     struct pos posforlookup = {.bm = p.bm, .bk = p.bk, .wm = p.wm, .wk = p.wk };
-                    dbresult = lookup(&posforlookup, (color)>>1);
+                    dbresult = lookup(&posforlookup, color);
+                    
 //                dbresult=DBLookup(p,(color)>>1);
             	if(dbresult==DRAW)
             		return 0;
@@ -1444,7 +1445,10 @@ int evaluation(int color, int alpha, int beta)
    allstones=bm+bk+wm+wk;
 	if(allstones<=maxNdb) /* this position is in the database!*/
   		{
-      dbresult=DBLookup(p,(color)>>1);
+//          dbresult=DBLookup(p,(color)>>1);
+            struct pos posforlookup = {.bm = p.bm, .bk = p.bk, .wm = p.wm, .wk = p.wk };
+            dbresult = lookup(&posforlookup, color);
+            
   		if(dbresult==DRAW)
   			return 0;
   		if(dbresult==WIN)

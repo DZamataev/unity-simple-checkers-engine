@@ -82,15 +82,15 @@ void positiontoindex(position *p, int32 *index)
 */
 
 	// set bm, bk, wm, wk, and ranks
-	bm = bitcount(p->bm);
+	bm = bool_bitcount(p->bm);
 	if(bm)
 		bmrank = MSB(p->bm)/4;
-	bk = bitcount(p->bk);
-	wm = bitcount(p->wm);
+	bk = bool_bitcount(p->bk);
+	wm = bool_bitcount(p->wm);
 	if(wm)
 		wmrank = (31-LSB(p->wm))/4;
 		
-	wk = bitcount(p->wk);
+	wk = bool_bitcount(p->wk);
 
 	// first, we set the index for the black men:
 	i=1;
@@ -123,7 +123,7 @@ void positiontoindex(position *p, int32 *index)
 		x=LSB(y);
 		y=y^(1<<x);
 		// next line is the count of men on squares 0....x-1, as x-1 of a 0000010000000 number is 0000000111111111
-		x-=bitcount((p->bm|p->wm)&((1<<x)-1)); 
+		x-=bool_bitcount((p->bm|p->wm)&((1<<x)-1));
 		bkindex+=bicoef[x][i];
 		i++;
 		}
@@ -135,7 +135,7 @@ void positiontoindex(position *p, int32 *index)
 		{
 		x=LSB(y);
 		y^=(1<<x);
-		x-=bitcount((p->bm|p->bk|p->wm) & ( (1<<x)-1 ) );
+		x-=bool_bitcount((p->bm|p->bk|p->wm) & ( (1<<x)-1 ) );
 		wkindex+=bicoef[x][i];
 		i++;
 		}
