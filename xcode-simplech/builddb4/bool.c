@@ -7,7 +7,7 @@
 #include "checkers.h"
 #include "bool.h"
 
-#define USE_ASM // use assembler routines in LSB, MSB
+#undef USE_ASM // use assembler routines in LSB, MSB
 				// only works with MS visual C
 
 #ifndef USE_ASM
@@ -146,7 +146,7 @@ int revert(int32 n)
 	return (revword[hiword(n)] + (revword[loword(n)]<<16));
 	}
 
-int bitcount(int32 n)
+int bool_bitcount(int32 n)
 	//-----------------------------------------------------------------------------------------------------
 	// table-lookup bitcount 
 	// returns the number of bits set in the 32-bit integer n 
@@ -155,7 +155,7 @@ int bitcount(int32 n)
 	return (bitsinword[n&0x0000FFFF]+bitsinword[(n>>16)&0x0000FFFF]);
 	}
 
-int recbitcount(int32 n)
+int bool_recbitcount(int32 n)
 	{
 	//-----------------------------------------------------------------------------------------------------
 	// counts & returns the number of bits which are set in a 32-bit integer

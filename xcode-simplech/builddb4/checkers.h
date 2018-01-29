@@ -55,16 +55,11 @@
 //-------------------------------------------------------------------------------
 // structures: define 32- and 64-bit integers, position and database info
 
-typedef unsigned int int32;
+#include "structs.h"
+#ifdef SYS_MACOS
+typedef long long __int64;
+#endif
 typedef __int64 int64;
-
-typedef struct pos
-	{
-	int32 bm;
-	int32 bk;
-	int32 wm;
-	int32 wk;
-	} position;
 
 typedef struct sub
 	{
@@ -79,7 +74,8 @@ typedef struct sub
 	} subdb;
 
 
-typedef position move;
+typedef struct pos position;
+typedef struct pos move;
 
 
 //------------------------------------------------------------------------

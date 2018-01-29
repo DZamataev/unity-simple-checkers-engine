@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92142FD5201F4D5A006099DA /* lookup.c in Sources */ = {isa = PBXBuildFile; fileRef = 9252C3A7201F485F002F9FDB /* lookup.c */; };
+		92142FD6201F4FD3006099DA /* bool.c in Sources */ = {isa = PBXBuildFile; fileRef = 9252C3B3201F4860002F9FDB /* bool.c */; };
+		92142FD7201F5040006099DA /* index.c in Sources */ = {isa = PBXBuildFile; fileRef = 9252C3AC201F485F002F9FDB /* index.c */; };
 		924FC580201B68DE00B4666A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 924FC57F201B68DE00B4666A /* main.m */; };
 		924FC5B7201B695700B4666A /* movegen.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC5A2201B695600B4666A /* movegen.c */; };
 		924FC5B8201B695700B4666A /* interface.c in Sources */ = {isa = PBXBuildFile; fileRef = 924FC5A4201B695600B4666A /* interface.c */; };
@@ -68,25 +71,25 @@
 		924FC5B4201B695600B4666A /* db4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = db4; sourceTree = "<group>"; };
 		924FC5B5201B695600B4666A /* db.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = db.c; sourceTree = "<group>"; };
 		924FC5B6201B695600B4666A /* switches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = switches.h; sourceTree = "<group>"; };
+		9252C3A5201F485F002F9FDB /* index.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = index.h; sourceTree = "<group>"; };
+		9252C3A6201F485F002F9FDB /* interface.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = interface.c; sourceTree = "<group>"; };
+		9252C3A7201F485F002F9FDB /* lookup.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lookup.c; sourceTree = "<group>"; };
+		9252C3A8201F485F002F9FDB /* min_movegen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = min_movegen.h; sourceTree = "<group>"; };
+		9252C3A9201F485F002F9FDB /* bool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bool.h; sourceTree = "<group>"; };
+		9252C3AA201F485F002F9FDB /* dbmain.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dbmain.c; sourceTree = "<group>"; };
+		9252C3AB201F485F002F9FDB /* interface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = interface.h; sourceTree = "<group>"; };
+		9252C3AC201F485F002F9FDB /* index.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = index.c; sourceTree = "<group>"; };
+		9252C3AD201F485F002F9FDB /* builddb4.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = builddb4.sln; sourceTree = "<group>"; };
+		9252C3AE201F485F002F9FDB /* lookup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lookup.h; sourceTree = "<group>"; };
+		9252C3AF201F485F002F9FDB /* min_movegen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = min_movegen.c; sourceTree = "<group>"; };
+		9252C3B0201F485F002F9FDB /* checkers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = checkers.h; sourceTree = "<group>"; };
+		9252C3B1201F4860002F9FDB /* builddb3.vcproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = builddb3.vcproj; sourceTree = "<group>"; };
+		9252C3B2201F4860002F9FDB /* dbmain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dbmain.h; sourceTree = "<group>"; };
+		9252C3B3201F4860002F9FDB /* bool.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bool.c; sourceTree = "<group>"; };
 		92C87325201209EC003AC2A5 /* simplech.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simplech.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C87328201209EC003AC2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C8733020120D3F003AC2A5 /* simplech.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = simplech.c; sourceTree = "<group>"; };
 		92C8733120120D3F003AC2A5 /* simplech.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simplech.h; sourceTree = "<group>"; };
-		92D4B776201F630E0047C9DF /* index.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = index.h; sourceTree = "<group>"; };
-		92D4B777201F630E0047C9DF /* interface.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = interface.c; sourceTree = "<group>"; };
-		92D4B778201F630E0047C9DF /* lookup.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lookup.c; sourceTree = "<group>"; };
-		92D4B779201F630E0047C9DF /* min_movegen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = min_movegen.h; sourceTree = "<group>"; };
-		92D4B77A201F630E0047C9DF /* bool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bool.h; sourceTree = "<group>"; };
-		92D4B77B201F630E0047C9DF /* dbmain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dbmain.c; sourceTree = "<group>"; };
-		92D4B77C201F630E0047C9DF /* interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interface.h; sourceTree = "<group>"; };
-		92D4B77D201F630E0047C9DF /* index.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = index.c; sourceTree = "<group>"; };
-		92D4B77E201F630E0047C9DF /* builddb4.sln */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = builddb4.sln; sourceTree = "<group>"; };
-		92D4B77F201F630E0047C9DF /* lookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lookup.h; sourceTree = "<group>"; };
-		92D4B780201F630E0047C9DF /* min_movegen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = min_movegen.c; sourceTree = "<group>"; };
-		92D4B781201F630E0047C9DF /* checkers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = checkers.h; sourceTree = "<group>"; };
-		92D4B782201F630E0047C9DF /* builddb3.vcproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = builddb3.vcproj; sourceTree = "<group>"; };
-		92D4B783201F630E0047C9DF /* dbmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbmain.h; sourceTree = "<group>"; };
-		92D4B784201F630E0047C9DF /* bool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bool.c; sourceTree = "<group>"; };
 		92E5815C2018B8700029AE7B /* simplech-test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "simplech-test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E5815E2018B8700029AE7B /* simplech_test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = simplech_test.m; sourceTree = "<group>"; };
 		92E581602018B8700029AE7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,6 +156,28 @@
 			path = "cake-1.20";
 			sourceTree = "<group>";
 		};
+		9252C3A4201F485F002F9FDB /* builddb4 */ = {
+			isa = PBXGroup;
+			children = (
+				9252C3A5201F485F002F9FDB /* index.h */,
+				9252C3A6201F485F002F9FDB /* interface.c */,
+				9252C3A7201F485F002F9FDB /* lookup.c */,
+				9252C3A8201F485F002F9FDB /* min_movegen.h */,
+				9252C3A9201F485F002F9FDB /* bool.h */,
+				9252C3AA201F485F002F9FDB /* dbmain.c */,
+				9252C3AB201F485F002F9FDB /* interface.h */,
+				9252C3AC201F485F002F9FDB /* index.c */,
+				9252C3AD201F485F002F9FDB /* builddb4.sln */,
+				9252C3AE201F485F002F9FDB /* lookup.h */,
+				9252C3AF201F485F002F9FDB /* min_movegen.c */,
+				9252C3B0201F485F002F9FDB /* checkers.h */,
+				9252C3B1201F4860002F9FDB /* builddb3.vcproj */,
+				9252C3B2201F4860002F9FDB /* dbmain.h */,
+				9252C3B3201F4860002F9FDB /* bool.c */,
+			);
+			path = builddb4;
+			sourceTree = "<group>";
+		};
 		92C8731C201209EC003AC2A5 = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +185,7 @@
 				92E5815D2018B8700029AE7B /* simplech-test */,
 				924FC5A1201B695600B4666A /* cake-1.20 */,
 				924FC57E201B68DE00B4666A /* cake-test-tool */,
-				92D4B775201F630E0047C9DF /* builddb4 */,
+				9252C3A4201F485F002F9FDB /* builddb4 */,
 				92C87326201209EC003AC2A5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -183,28 +208,6 @@
 				92C8733020120D3F003AC2A5 /* simplech.c */,
 			);
 			path = simplech;
-			sourceTree = "<group>";
-		};
-		92D4B775201F630E0047C9DF /* builddb4 */ = {
-			isa = PBXGroup;
-			children = (
-				92D4B776201F630E0047C9DF /* index.h */,
-				92D4B777201F630E0047C9DF /* interface.c */,
-				92D4B778201F630E0047C9DF /* lookup.c */,
-				92D4B779201F630E0047C9DF /* min_movegen.h */,
-				92D4B77A201F630E0047C9DF /* bool.h */,
-				92D4B77B201F630E0047C9DF /* dbmain.c */,
-				92D4B77C201F630E0047C9DF /* interface.h */,
-				92D4B77D201F630E0047C9DF /* index.c */,
-				92D4B77E201F630E0047C9DF /* builddb4.sln */,
-				92D4B77F201F630E0047C9DF /* lookup.h */,
-				92D4B780201F630E0047C9DF /* min_movegen.c */,
-				92D4B781201F630E0047C9DF /* checkers.h */,
-				92D4B782201F630E0047C9DF /* builddb3.vcproj */,
-				92D4B783201F630E0047C9DF /* dbmain.h */,
-				92D4B784201F630E0047C9DF /* bool.c */,
-			);
-			path = builddb4;
 			sourceTree = "<group>";
 		};
 		92E5815D2018B8700029AE7B /* simplech-test */ = {
@@ -347,12 +350,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				924FC5BB201B695700B4666A /* Makefile in Sources */,
+				92142FD7201F5040006099DA /* index.c in Sources */,
 				924FC580201B68DE00B4666A /* main.m in Sources */,
 				924FC5BD201B695700B4666A /* book.c in Sources */,
 				924FC5BE201B695700B4666A /* db.c in Sources */,
 				924FC5B8201B695700B4666A /* interface.c in Sources */,
+				92142FD6201F4FD3006099DA /* bool.c in Sources */,
 				924FC5B7201B695700B4666A /* movegen.c in Sources */,
 				924FC5BA201B695700B4666A /* cakepp.c in Sources */,
+				92142FD5201F4D5A006099DA /* lookup.c in Sources */,
 				924FC5B9201B695700B4666A /* testcake.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +386,8 @@
 		924FC582201B68DE00B4666A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 43663733CZ;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -394,6 +402,8 @@
 		924FC583201B68DE00B4666A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 43663733CZ;
 				GCC_PREPROCESSOR_DEFINITIONS = "SYS_MACOS=1";

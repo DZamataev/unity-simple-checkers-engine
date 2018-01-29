@@ -11,16 +11,109 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#ifdef SYS_WINDOWS
 #include <windows.h>
-
+#enlif SYS_MACOS
+//#include "cakepp.h"
+#endif
 
 subdb subdatabase[MAXPIECE+1][MAXPIECE+1][MAXPIECE+1][MAXPIECE+1][7][7][2];
 int bicoef[33][33];
 int bicoeftrans[33][33];
 
 // delete this line or remove extern if standalone
-extern int32 meminuse;
+int32 meminuse;
 
+// duplicated functions
+
+int *currentdb_b, *currentdb_w;
+int memorypanic(void)
+{
+    
+    //-----------------------------------------------------------------------------------------------------
+    // unloads all databases except currentdb_b and currentdb_w
+    // can be called at any time to reduce memory load without disturbing calculation
+    // however, if there is enough memory left, it should not be called excessively, as this is bad
+    // for overall performance. ideally, this is only called when memory gets scarce.
+    //-----------------------------------------------------------------------------------------------------
+    
+    int i,j,k,l,m,n;
+    
+    
+    printf("\nmemory panic: %i bytes in use!", meminuse);
+    meminuse = 0;
+    //getch();
+    for(i=0;i<=MAXPIECE;i++)
+    {
+        for(j=0;j<=MAXPIECE;j++)
+        {
+            for(k=0;k<=MAXPIECE;k++)
+            {
+                for(l=0;l<=MAXPIECE;l++)
+                {
+                    for(m=0;m<7;m++)
+                    {
+                        for(n=0;n<7;n++)
+                        {
+                            // black databases
+                            if(subdatabase[i][j][k][l][m][n][0].database != NULL)
+                            {
+                                if(subdatabase[i][j][k][l][m][n][0].database != currentdb_b)
+                                {
+                                    printf("\nfreeing up %i%i%i%i.%i%i", i,j,k,l,m,n);
+#ifdef SYS_WINDOWS
+                                    VirtualFree(subdatabase[i][j][k][l][m][n][0].database , 0, MEM_RELEASE);
+#elif SYS_MACOS
+                                    free(subdatabase[i][j][k][l][m][n][0].database);
+#endif
+                                    subdatabase[i][j][k][l][m][n][0].database=NULL;
+                                }
+                                else
+                                {
+                                    meminuse += pad16(subdatabase[i][j][k][l][m][n][0].databasesize/4);
+                                }
+                            }
+                            
+                            // white databases
+                            if(subdatabase[i][j][k][l][m][n][1].database != NULL)
+                            {
+                                if(subdatabase[i][j][k][l][m][n][1].database != currentdb_w)
+                                {
+                                    printf("\nfreeing up %i%i%i%i.%i%i", i,j,k,l,m,n);
+#ifdef SYS_WINDOWS
+                                    VirtualFree(subdatabase[i][j][k][l][m][n][1].database , 0, MEM_RELEASE);
+#elif SYS_MACOS
+                                    free(subdatabase[i][j][k][l][m][n][1].database);
+#endif
+                                    subdatabase[i][j][k][l][m][n][1].database=NULL;
+                                }
+                                else
+                                {
+                                    meminuse += pad16(subdatabase[i][j][k][l][m][n][1].databasesize/4);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    printf("\nmemory usage: %i",  meminuse);
+    return 0;
+}
+
+int setdbname(int bm, int bk, int wm, int wk, int bmrank, int wmrank, int color, char *dbname)
+{
+    // SUICIDE CHECKERS: use "scdb%i..."
+    // regular checkers: use "db%i..."
+    if(color == BLACK)
+        sprintf(dbname,"db%i%i%i%i-%i%ib.dat", bm,bk,wm,wk,bmrank,wmrank);
+    else
+        sprintf(dbname,"db%i%i%i%i-%i%iw.dat", bm,bk,wm,wk,bmrank,wmrank);
+    return 1;
+}
+
+// ENDOF duplicated functions
 
 int lookup(position *p, int color)
 	{
@@ -42,27 +135,27 @@ int lookup(position *p, int color)
 	FILE *fp;
 
 	// set bm, bk, wm, wk, and ranks - bitcount is in bool.c
-	bm = bitcount(p->bm);
+	bm = bool_bitcount(p->bm);
 	if(bm)
 		bmrank = MSB(p->bm)/4;
-	bk = bitcount(p->bk);
-	wm = bitcount(p->wm);
+	bk = bool_bitcount(p->bk);
+	wm = bool_bitcount(p->wm);
 	if(wm)
 		wmrank = (31-LSB(p->wm))/4;	
-	wk = bitcount(p->wk);
+	wk = bool_bitcount(p->wk);
 	
 	//if one side has nothing, return appropriate value
 	// regular checkers
-	//if(bm+bk==0)
-	//	return color==BLACK?LOSS:WIN;
-	//if(wm+wk==0)
-	//	return color==WHITE?LOSS:WIN;
+    if(bm+bk==0)
+        return color==BLACK?LOSS:WIN;
+    if(wm+wk==0)
+        return color==WHITE?LOSS:WIN;
 	// reverse the signs above for suicide checkers!
 	// SUICIDE CHECKERS
-	if(bm+bk==0)
-		return color==WHITE?LOSS:WIN;
-	if(wm+wk==0)
-		return color==BLACK?LOSS:WIN;
+//    if(bm+bk==0)
+//        return color==WHITE?LOSS:WIN;
+//    if(wm+wk==0)
+//        return color==BLACK?LOSS:WIN;
 
 	
 	
@@ -131,8 +224,13 @@ int lookup(position *p, int color)
 		else
 			printf(" white to move");
 		memsize = pad16(subdatabase[bm][bk][wm][wk][bmrank][wmrank][color].databasesize/4);
-		//database = malloc(memsize);
-		database = VirtualAlloc(0, memsize, MEM_RESERVE|MEM_COMMIT, PAGE_READWRITE);
+//        database = malloc(memsize);
+#ifdef SYS_WINDOWS
+        database = VirtualAlloc(0, memsize, MEM_RESERVE|MEM_COMMIT, PAGE_READWRITE);
+#elif SYS_MACOS
+        database = malloc(memsize);
+#endif
+            
 
 		meminuse += memsize;
 		printf(" mem usage %iKB",meminuse/1024);
@@ -140,12 +238,16 @@ int lookup(position *p, int color)
 		if(database==NULL)
 			{
 			// we could not allocate memory for this database! help! - call memorypanic
-			memorypanic();
-			database = VirtualAlloc(0, memsize, MEM_RESERVE|MEM_COMMIT, PAGE_READWRITE);
+                memorypanic();
+                #ifdef SYS_WINDOWS
+                database = VirtualAlloc(0, memsize, MEM_RESERVE|MEM_COMMIT, PAGE_READWRITE);
+                #elif SYS_MACOS
+                database = malloc(memsize);
+                #endif
 			if(database==NULL)
 				{
 				printf("\ncould not allocate memory despite memorypanic call");
-				getch();
+				getchar();
 				exit(0);
 				}
 			}

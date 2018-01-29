@@ -67,7 +67,6 @@
 
     */
 
-
 #include "switches.h"
 
 #include <stdio.h>
@@ -210,7 +209,10 @@ int initcake(int log)
 #endif
 #ifdef USEDB
 
-	maxNdb=DBInit();
+//    maxNdb=DBInit();
+        maxNdb = 4;
+        initbool();
+        initlookup();
 #endif
    
 	/* load book */
@@ -894,7 +896,9 @@ int negamax(int d, int color, int alpha, int beta, int32 *protokiller, int trunc
                /* found a position which should be in the database */
             	/* no captures are possible */
                dblookups++;
-            	dbresult=DBLookup(p,(color)>>1);
+                    struct pos posforlookup = {.bm = p.bm, .bk = p.bk, .wm = p.wm, .wk = p.wk };
+                    dbresult = lookup(&posforlookup, (color)>>1);
+//                dbresult=DBLookup(p,(color)>>1);
             	if(dbresult==DRAW)
             		return 0;
             	if(dbresult==WIN)
